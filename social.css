@@ -1,0 +1,321 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+:root {
+  --toggleColor: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+  --bgColor: hsl(230, 17%, 14%);
+  --bgTopColor: hsl(232, 19%, 15%);
+  --cardBg: hsl(228, 28%, 20%);
+  --mainTxtColor: hsl(0, 0%, 100%);
+  --txtColor: hsl(228, 34%, 66%);
+}
+main {
+  background: var(--bgColor);
+}
+header {
+  width: 100%;
+  background: var(--bgTopColor);
+}
+
+h1, h2, h3, h4 {
+  color: var(--mainTxtColor);
+}
+header > div:first-child {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+}
+h1 {
+  font-size: 1.5rem;
+}
+header p {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--txtColor);
+  margin-top: 0.4rem;
+}
+#mode {
+  color: var(--txtColor);
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+}
+#toggle {
+  width: 40px;
+  height: 20px;
+  position: relative;
+  background: var(--toggleColor);
+  border-radius: 20px;
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+#toggle:hover {
+  background: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+}
+#switch {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  background: var(--bgColor);
+}
+.fb, .twitter, .insta, .ytb {
+  padding-top: 4px;
+  overflow: hidden;
+  border-radius: 5px;
+}
+.fb {
+  background: hsl(208, 92%, 53%);
+}
+.twitter {
+  background: hsl(203, 89%, 53%);
+}
+.insta {
+  background: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+}
+.ytb {
+  background: hsl(348, 97%, 39%);
+}
+#box .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+}
+.card {
+  background: var(--cardBg);
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  position: relative;
+}
+.card:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgb(155, 154, 154);
+  opacity: 20%;
+  display: none;
+  border-radius: 5px;
+}
+.card:hover:after {
+  display: block;
+}
+#box .card > div:first-child {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  color: var(--txtColor);
+}
+.card p {
+  font-size: 0.8em;
+  color: var(--txtColor);  
+}
+#box .card > div:first-child img {
+  margin-right: 0.4em;
+}
+h2 {
+  color: var(--mainTxtColor);
+  font-size: 3.5rem;
+}
+#box .card p {
+  font-weight: 200;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  margin-bottom: 1.2rem;
+  margin-top: -0.2rem;
+}
+.up, .down {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+.up img, .down img {
+  margin-right: 0.4em;
+}
+.up {
+  color: hsl(163, 72%, 41%);
+}
+.down {
+  color: hsl(356, 69%, 56%);
+}
+h3 {
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+}
+section .card {
+  padding: 1rem;
+  border-radius: 5px;
+}
+section .card > div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+section .card > div:first-child {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+h4 {
+  font-size: 1.4rem;
+}
+
+@media screen and (min-width:900px) {
+  body {
+    width: 100%;
+    background: var(--bgColor);
+  }
+  main {
+    width: 100vw;
+    max-width: 1440px;
+    height: 100vh;
+    max-height: 720px;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  header {
+    height: 32vh;
+    max-height: 200px;
+    border-radius: 0 0 1.5rem 1.5rem;
+    padding: 0 6%;
+    position: relative;
+  }
+  #mode {
+    width: 200px;
+    justify-content: flex-end;
+  }
+  #box {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2%;
+    transform: translateY(50%);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 0 6%;
+  }
+  section {
+    width: 100%;
+    padding: 2rem 6%;
+    margin-top: 6rem;
+    position: relative;
+  }
+  section > div {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1.4rem 2%;
+  }
+}
+
+@media screen and (min-width:600px) and (max-width:899px) {
+  main {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+  }
+  header {
+    border-radius: 0 0 1.5rem 1.5rem;
+    padding: 0 10%;
+    position: relative;
+  }
+  #mode {
+    width: 200px;
+    justify-content: flex-end;
+  }
+  #box {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 5%;
+    padding: 0;
+  }
+  section {
+    width: 100%;
+    padding: 2.5rem 10%;
+    position: relative;
+  }
+  section > div {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 1rem 5%;
+  }
+}
+
+@media screen and (max-width:599px) {
+  main {
+    background: var(--bgColor);
+    width: 100%;
+    min-width: 280px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  header {
+    width: 100%;
+    height: 250px;
+    overflow: visible;
+    padding: 1rem 1.5rem;
+    border-radius: 0 0 1.5rem 1.5rem;
+  }
+  header > div:first-child {
+    width: 100%;
+    display: block;
+    position: relative;
+  }
+  #mode {
+    width: 100%;
+    padding: 1rem 0;
+    border-top: 1px solid var(--txtColor);
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    font-weight: 700;
+  }
+  #box, section {
+    width: 100%;
+  }
+  #box {
+    position: relative;
+  }
+  .fb, .insta, .ytb, .twitter {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+  section {
+    margin-top: 50.5rem;
+    padding: 2rem 1.5rem;
+    position: relative;
+  }
+  section .card {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  h3 {
+    padding-top: 1rem;
+  }
+}
