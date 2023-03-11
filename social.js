@@ -3,6 +3,7 @@ const toggle = document.getElementById('toggle');
 var move = 0;
 const r = document.querySelector(':root');
 const rs = getComputedStyle(r);
+const theme = localStorage.getItem("theme");
 
 function setLight() {
   r.style.setProperty('--toggleColor',"hsl(230, 22%, 74%)");
@@ -22,16 +23,31 @@ function setDark() {
   r.style.setProperty('--txtColor','hsl(228, 34%, 66%)');
 }
 
+if(theme === "dark") {
+  move = 0;
+  circle.style.right = "auto";
+  circle.style.left = "3px";
+  setDark();
+}
+if(theme === "light" ) {
+  move = 1;
+  circle.style.left = "auto";
+  circle.style.right = "3px";
+  setLight();
+}
+
 toggle.addEventListener('click', function(){
   if(move === 0) {
     circle.style.left = "auto";
     circle.style.right = "3px";
     setLight();
+    localStorage.setItem("theme","light");
     move++;
   }else if(move === 1) {
     circle.style.right = "auto";
     circle.style.left = "3px";
     setDark();
+    localStorage.setItem("theme","dark");
     move--;
   }
 });
